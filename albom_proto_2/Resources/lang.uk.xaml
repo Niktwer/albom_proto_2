@@ -1,0 +1,74 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib"
+                    xmlns:v1="http://schemas.microsoft.com/netfx/2009/xaml/presentation">
+    <!-- Main window -->
+    <v:String x:Key="Title_main">Коментарі до зображення</v:String>
+    <v:String x:Key="About">Про програму</v:String>
+    <v:String x:Key="Language">Мова: </v:String>
+    <v:String x:Key="Comments">Коментарі</v:String>
+    <v:String x:Key="m_RichText">текст ee</v:String>
+    <v:Double x:Key="m_other">20.15</v:Double>
+    <v:String x:Key="m_user">Вибір користувача</v:String>
+    <v:String x:Key="m_extension">Вибір типу файлів</v:String>
+    <v:String x:Key="m_type">Всі зображення</v:String>
+     <!--<v:String x:Key="Folder">selected</v:String>-->
+    <v:String x:Key="Folder">Виберіть папку, яка містить зображення</v:String>
+    <v:String x:Key="Zoom">Масштаб зображення</v:String>
+    <v:String x:Key="Move">Перемістити файл, згідно Метадата</v:String>
+    <v:String x:Key="Info"> Довідка про программу</v:String>
+    <v:String x:Key="Avtor">Інформація про автора</v:String>
+    <v:String x:Key="S_Languare">Вибір мови</v:String>
+
+    <v:String x:Key="Path_text">Вибраний шлях:</v:String>
+    <v:String x:Key="All_files">Всі зображення</v:String>
+    <v:String x:Key="Sel_image">Вибране зображення:</v:String>
+    <v:String x:Key="SI_1">Ім'я файлу:</v:String>
+    <v:String x:Key="SI_2">Розмір файлу (MB):</v:String>
+    <v:String x:Key="SI_3">Висота * Ширина Глибина кольору:</v:String>
+    <v:String x:Key="SI_4">Розміщення зображення {Метадані}:</v:String>
+
+    <v:String x:Key="Increase">Збільшити зображення</v:String>
+    <v:String x:Key="Reset">Скасувати всі зміни</v:String>
+    <v:String x:Key="Rotate">Повернути зображення</v:String>
+    <v:String x:Key="Metadane">Запишіть метадані</v:String>
+    <v:String x:Key="write metadat">Коренева папка картинок:</v:String>
+    <v:String x:Key="image">Операції над зображенням -</v:String>
+    <v:String x:Key="placement">Знищити метадані для зображення</v:String>
+    <v:String x:Key="Click">Виконайте клік правою кнопкою миші на зображенні для вибору зміни розміщення метаданних</v:String>
+    <v:String x:Key="thumbnail">Тільки зображення JPEG із збереженим ескізом покажуть ескіз під час попереднього перегляду.</v:String>
+    <v1:ContextMenu x:Key="Menu_M">ЛЛ</v1:ContextMenu>
+    <v:String x:Key="title_user">Ім'я повинно містити не менше 4-х символів, але не більше 13.</v:String>
+    <v:String x:Key="standart_user">Виконайте подвійний клік для вибору поточного користувача</v:String>
+    <v:String x:Key="edit Metadata">Змінити розміщення (Metadata)</v:String>
+    <v:String x:Key="default Metadata">Виберіть зображення для перегляду метаданих</v:String>
+    <v:String x:Key="instruction">Перегляд інструкції (відео)</v:String>
+    <v:String x:Key="Moves">Перемістити всі файли, в яких записано Metadata</v:String>
+    <v:String x:Key="Instruction_message">На ПК немає програм для перегляду інструкції</v:String>
+    <v:String x:Key="Instruction_title">Перегляд інструкції</v:String>
+    <v:String x:Key="Instruction_opis">Для перегляду відеоінструкції натисніть - Ok, для відмови від перегляду- Cancel.</v:String>
+    <v:String x:Key="Instruction_opis2">Важливо! Після перегляду, для продовження роботи потрібно закрити вікно відеоінструкції.</v:String>
+    <v:String x:Key="Settings">Налаштування ...</v:String>
+    <v:String x:Key="Count_image">Зображення для відображення - всі</v:String>
+    <v:String x:Key="Folder_refresh">Оновити вибрану папку</v:String>
+    <v:String x:Key="Insufficient_memory_title">Недостатньо пам'яті для продовження виконання програми</v:String>
+    <v:String x:Key="Insufficient_memory_message">Зменьшіть значення параметра '1' та виконайте команду - '2'</v:String>
+    <v:String x:Key="Insufficient_memory_message_1">Рекомендоване значення для параметру '1'</v:String>
+    <v:String x:Key="Edit">Виберіть Метадані для зображення</v:String>
+    <v:String x:Key="rE_title">Помилка запису метаданих</v:String>
+    <v:String x:Key="rE_message">Повторіть ввід  метаданих для зображення</v:String>
+    <v:String x:Key="data_modify">Дата зміни:</v:String>
+    <v:String x:Key="Write_metadata_empty">Запишіть метадані до всіх зображень, які їх  не мають</v:String>
+
+
+
+
+
+
+
+
+
+
+
+
+</ResourceDictionary>

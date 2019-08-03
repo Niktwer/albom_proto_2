@@ -1,0 +1,68 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <!-- Main window -->
+                    <v:String x:Key="Title_main">对图像的评论</v:String>
+                    <v:String x:Key="About">关于该计划</v:String>
+                    <v:String x:Key="Language">语言： </v:String>
+                    <v:String x:Key="Comments">评论</v:String>
+                    <v:String x:Key="m_RichText">文本</v:String>
+                    <v:Double x:Key="m_other">20.15</v:Double>
+                    <v:String x:Key="m_user">选择用户</v:String>
+                    <v:String x:Key="m_extension">选择文件类型</v:String>
+                    <v:String x:Key="m_type">所有图片</v:String>
+                    
+                    <!--<v:String x:Key="Folder">selected</v:String>-->
+                    <v:String x:Key="Folder">选择包含图像的文件夹</v:String>
+                    <v:String x:Key="Zoom">图像的比例</v:String>
+                    <v:String x:Key="Move">根据元数据移动文件</v:String>
+                    <v:String x:Key="Info">有关该计划的帮助</v:String>
+                    <v:String x:Key="Avtor">有关作者的信息</v:String>
+                    <v:String x:Key="S_Languare">选择一种语言</v:String>
+
+                    <v:String x:Key="Path_text">选定路径：</v:String>
+                    <v:String x:Key="All_files">所有文件</v:String>
+                    <v:String x:Key="Sel_image">选中图片：</v:String>
+                    <v:String x:Key="SI_1">文件名称：</v:String>
+                    <v:String x:Key="SI_2">文件大小（MB）：</v:String>
+                    <v:String x:Key="SI_3">高度*宽度颜色深度：</v:String>
+                    <v:String x:Key="SI_4">图像放置 {元数据} :</v:String>
+
+                    <v:String x:Key="Increase">增加图像</v:String>
+                    <v:String x:Key="Reset">取消所有更改</v:String>
+                    <v:String x:Key="Rotate">旋转图像</v:String>
+                    <v:String x:Key="Metadane">写元数据</v:String>
+                    <v:String x:Key="write metadat">根图片文件夹：</v:String>
+                    <v:String x:Key="image">图像交易 -</v:String>
+                    <v:String x:Key="placement">删除图像的元数据</v:String>
+                    <v:String x:Key="thumbnail">只有具有存储缩略图的JPeg图像才会在预览期间显示缩略图。</v:String>
+                    <v:String x:Key="Click">右键单击图像以选择元数据放置更改</v:String>
+                    <v:String x:Key="title_user">名称必须至少包含4个字符，但不得超过13个。</v:String>
+                    <v:String x:Key="edit Metadata">更改展示位置（元数据）</v:String>
+                    <v:String x:Key="default Metadata">选择图像以查看元数据</v:String>
+                    <v:String x:Key="instruction">查看说明（视频）</v:String>
+                    <v:String x:Key="standart_user">双击以选择当前用户</v:String>
+                    <v:String x:Key="Moves">移动编写元数据的所有文件</v:String>
+                    <v:String x:Key="Instruction_message">PC上没有用于查看手册的程序</v:String>
+                    <v:String x:Key="Instruction_title">查看说明</v:String>
+                    <v:String x:Key="Instruction_opis">要查看视频教程，请按 - 确定，拒绝查看 - 取消。</v:String>
+                    <v:String x:Key="Instruction_opis2">重要！ 查看后，您需要关闭视频教程窗口以继续工作。</v:String>
+                    <v:String x:Key="Settings"> 设置...</v:String>
+                    <v:String x:Key="Count_image">要显示的图像 - 全部</v:String>
+                    <v:String x:Key="Folder_refresh">刷新所选文件夹</v:String>
+                    <v:String x:Key="Insufficient_memory_title">内存不足，无法继续执行程序</v:String>
+                    <v:String x:Key="Insufficient_memory_message">减小'1'参数的值并执行命令 - '2'</v:String>
+                    <v:String x:Key="Insufficient_memory_message_1">'1'参数的推荐值</v:String>
+                    <v:String x:Key="Edit">选择图像的元数据</v:String>
+                    <v:String x:Key="rE_title">写元数据时出错</v:String>
+                    <v:String x:Key="rE_message">重复图像的元数据条目</v:String>
+                    <v:String x:Key="data_modify">修改日期：</v:String>
+                    <v:String x:Key="Write_metadata_empty">为没有它们的所有图像写入元数据</v:String>
+
+
+
+
+
+
+
+</ResourceDictionary>

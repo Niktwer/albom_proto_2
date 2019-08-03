@@ -1,0 +1,65 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib"
+                    xmlns:v1="http://schemas.microsoft.com/netfx/2009/xaml/presentation">
+    <!-- Main window -->
+                    <v:String x:Key="Title_main">Comments on the image</v:String>
+                    <v:String x:Key="About">About</v:String>
+                    <v:String x:Key="Language">Language: </v:String>
+                    <v:String x:Key="Comments">Comments</v:String>
+                    <v:String x:Key="m_RichText">neutral</v:String>
+                    <v:Double x:Key="m_other">20.15</v:Double>
+                    <v:String x:Key="m_user">Select user</v:String>
+                    <v:String x:Key="m_extension">Selecting the file type</v:String>
+                    <v:String x:Key="m_type">All images</v:String>
+                    <v:String x:Key="m_lan">en-US</v:String>
+                    <v:String x:Key="ini_file">All files</v:String>
+                    <!--<v:String x:Key="Folder">selected</v:String>-->
+                    <v:String x:Key="Folder">Select folder, which contain image</v:String>
+                    <v:String x:Key="Zoom">Picture scale</v:String>
+                    <v:String x:Key="Move">Move the file according to the Metadata</v:String>
+                    <v:String x:Key="Info">Help about the program</v:String>
+                    <v:String x:Key="Avtor">Information about the author</v:String>
+                    <v:String x:Key="S_Languare">Choosing a Language</v:String>
+
+                    <v:String x:Key="Path_text">Selected path: </v:String>
+                    <v:String x:Key="All_files">All_files</v:String>
+                    <v:String x:Key="Sel_image">Selected image: </v:String>
+                    <v:String x:Key="SI_1">Name file:</v:String>
+                    <v:String x:Key="SI_2">Size file (MB):</v:String>
+                    <v:String x:Key="SI_3">Hight*Widht color Deptht:</v:String>
+                    <v:String x:Key="SI_4">Image placement {Metadata}:</v:String>
+
+                    <v:String x:Key="Increase">Increase image</v:String>
+                    <v:String x:Key="Reset">Cancel all changes</v:String>
+                    <v:String x:Key="Rotate">Rotate image</v:String>
+                    <v:String x:Key="Metadane">Write metadata</v:String>
+                    <v:String x:Key="write metadat">Root Picture Folder:</v:String>
+                    <v:String x:Key="image">Image Transactions -</v:String>
+                    <v:String x:Key="placement">Delete metadata for image</v:String>
+                    <v:String x:Key="Click">Right-click on the image to select the metadata placement change</v:String>
+                    <v:String x:Key="thumbnail">Only JPeg images with a stored thumbnail will display a thumbnail during preview.</v:String>
+                    <v:String x:Key="title_user">The name must contain at least 4 characters, but no more than 13.</v:String>
+                    <v1:ContextMenu x:Key="Menu_M">Move</v1:ContextMenu>
+                    <v:String x:Key="edit Metadata">Change placement (Metadata)</v:String>
+                    <v:String x:Key="default Metadata">Select an image to view metadata</v:String>
+                    <v:String x:Key="instruction">View the instructions (video)</v:String>
+                    <v:String x:Key="standart_user">Double click to select the current user</v:String>
+                    <v:String x:Key="Moves">Check all files in recorded Metadata</v:String>
+                    <v:String x:Key="Instruction_message">There are no programs on the PC for viewing the manual</v:String>
+                    <v:String x:Key="Instruction_title">View the instructions</v:String>
+                    <v:String x:Key="Instruction_opis">To view the video tutorial, press - Ok, to refuse to view - Cancel.</v:String>
+                    <v:String x:Key="Instruction_opis2">Importantly! After viewing, you need to close the video tutorial window to continue the work.</v:String>
+                    <v:String x:Key="Settings">Settings...</v:String>
+                    <v:String x:Key="Count_image">Images to display - all</v:String>
+                    <v:String x:Key="Folder_refresh">Refresh selected folder</v:String>
+                    <v:String x:Key="Insufficient_memory_title">Insufficient memory to continue the execution of the program</v:String>
+                    <v:String x:Key="Insufficient_memory_message">Decrease the value of the '1' parameter and execute the command - '2'</v:String>
+                    <v:String x:Key="Insufficient_memory_message_1">Recommended value for the '1' parameter </v:String>
+                    <v:String x:Key="Edit">Select Metadata for the image</v:String>
+                    <v:String x:Key="rE_title">Error writing metadata</v:String>
+                    <v:String x:Key="rE_message">Repeat the metadata entry for the image</v:String>
+                    <v:String x:Key="data_modify">Date of change:</v:String>
+                    <v:String x:Key="Write_metadata_empty">Write the metadata to all images that do not have them</v:String>
+
+</ResourceDictionary>

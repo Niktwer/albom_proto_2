@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{829505F3-89BB-41A8-A0BC-0D58CEDBB78A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>albom_proto_2</RootNamespace>
+    <AssemblyName>albom_proto_2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>y:\publish\albom\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>Comments on the image</ProductName>
+    <PublisherName>NikTwer</PublisherName>
+    <SuiteName>Albom_proto</SuiteName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationVersion>28.8.25.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>albom_proto_2.app</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5724A8B9C62A9E7DD788CDC4D8D4E25848B6C606</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>albom_proto_2_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ic_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Core.1.1.0.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Class1.cs" />
+    <Compile Include="FileAssociation.cs" />
+    <Compile Include="Instruction.xaml.cs">
+      <DependentUpon>Instruction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\NativeMethods.cs" />
+    <Compile Include="Secret.cs" />
+    <Compile Include="SHIFR.cs" />
+    <Compile Include="Title_Window.xaml.cs">
+      <DependentUpon>Title_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TopLevelWindowUtils.cs" />
+    <Compile Include="WindowHandle.cs" />
+    <Compile Include="WindowHandleExtensions.cs" />
+    <Page Include="Instruction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Adorner.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PhotoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\lang.es.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\lang.hi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\lang.pl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\lang.ru.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\lang.uk.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\lang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\lang.zh.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Title_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Photo.cs" />
+    <Compile Include="PhotoView.xaml.cs">
+      <DependentUpon>PhotoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="albom_proto_2.nuspec" />
+    <None Include="albom_proto_2_TemporaryKey.pfx" />
+    <None Include="package.builder.json" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="flags\en.png" />
+    <Resource Include="flags\es.png" />
+    <Resource Include="flags\hi.png" />
+    <Resource Include="flags\pl.png" />
+    <Resource Include="flags\ru.png" />
+    <Resource Include="flags\uk.png" />
+    <Resource Include="flags\zh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\market 031.jpg" />
+    <Resource Include="images\market 032.jpg" />
+    <Resource Include="images\market 034.jpg" />
+    <Resource Include="images\market 039.jpg" />
+    <Resource Include="images\market 040.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ic_do.png" />
+    <Resource Include="Resources\ic_NT.png" />
+    <Resource Include="Resources\message_about.png" />
+    <Resource Include="Resources\web_hi_res_512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\new_location_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\location_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\crop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit_location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reference\en\index.html" />
+    <EmbeddedResource Include="reference\es\index.html" />
+    <EmbeddedResource Include="reference\pl\index.html" />
+    <EmbeddedResource Include="reference\ru\index.html" />
+    <EmbeddedResource Include="reference\zh\index.html" />
+    <EmbeddedResource Include="reference\zip\1_html_m55158a1c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_location.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reference\uk\index.html" />
+    <EmbeddedResource Include="reference\uk\main_uk.jpg" />
+    <EmbeddedResource Include="reference\uk\metadata_uk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reference\ru\metadata_ru.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reference\ru\main_ru.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reference\pl\main_pl.jpg" />
+    <EmbeddedResource Include="reference\pl\metadata_pl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reference\en\main_en.jpg" />
+    <EmbeddedResource Include="reference\en\metadata_en.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reference\es\main_es.jpg" />
+    <EmbeddedResource Include="reference\es\metadata_es.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reference\hi\main_hi.jpg" />
+    <EmbeddedResource Include="reference\hi\metadata_hi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reference\zh\main_zh.jpg" />
+    <EmbeddedResource Include="reference\zh\metadata_zh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="video\Pause_32.png" />
+    <Resource Include="video\Play_32.png" />
+    <Resource Include="video\Stop_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="video\Instruction.webm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\location_on.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reference\hi\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\refresh_location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\refresh_location.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\edit_location.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ic_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ic_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1c_add++.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ic_add2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ic_add3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ic_icon_con.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\NuGet.Package.Builder.1.0.12\build\NuGet.Package.Builder.targets" Condition="Exists('..\packages\NuGet.Package.Builder.1.0.12\build\NuGet.Package.Builder.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NuGet.Package.Builder.1.0.12\build\NuGet.Package.Builder.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuGet.Package.Builder.1.0.12\build\NuGet.Package.Builder.targets'))" />
+  </Target>
+</Project>

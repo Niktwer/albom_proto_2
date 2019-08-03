@@ -1,0 +1,18 @@
+﻿<Application x:Class="albom_proto_2.app"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:er="clr-namespace:albom_proto_2"             
+            Startup="OnApplicationStartup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <sys:Double x:Key="titlt_widht">480</sys:Double>
+            <sys:Double x:Key="main_widht">800</sys:Double>
+            <sys:Double x:Key="main_height">700</sys:Double>
+            <ObjectDataProvider x:Key="Photos" ObjectType="{x:Type er:PhotoCollection}" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/lang.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

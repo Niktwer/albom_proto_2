@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <!-- Main window -->
+                    <v:String x:Key="Title_main">Comentarios sobre la imagen.</v:String>
+                    <v:String x:Key="About">Sobre el programa</v:String>
+                    <v:String x:Key="Language">Idioma: </v:String>
+                    <v:String x:Key="Comments">Comentarios</v:String>
+                    <v:String x:Key="m_RichText">el texto</v:String>
+                    <v:Double x:Key="m_other">20.15</v:Double>
+                    <v:String x:Key="m_user">Seleccionar usuario</v:String>
+                    <v:String x:Key="m_extension">Seleccionar el tipo de archivo</v:String>
+                    <v:String x:Key="m_type">Todas las imagenes</v:String>
+    
+                    <v:String x:Key="Folder">Seleccione la carpeta que contiene la imagen</v:String>
+                    <v:String x:Key="Zoom">Escala de la imagen</v:String>
+                    <v:String x:Key="Move">Mover archivo de acuerdo con Metadata</v:String>
+                    <v:String x:Key="Info">Ayuda sobre el programa</v:String>
+                    <v:String x:Key="Avtor">Información sobre el autor</v:String>
+                    <v:String x:Key="S_Languare">Elección de idioma</v:String>
+
+                    <v:String x:Key="Path_text">Ruta seleccionada:</v:String>
+                    <v:String x:Key="All_files">Todos los archivos</v:String>
+                    <v:String x:Key="Sel_image">Imagen seleccionada:</v:String>
+                    <v:String x:Key="SI_1">Nombre de archivo:</v:String>
+                    <v:String x:Key="SI_2">Tamaño de archivo (MB):</v:String>
+                    <v:String x:Key="SI_3">Altura * Ancho Profundidad de color:</v:String>
+                    <v:String x:Key="SI_4">Colocación de imagen {Metadatos}:</v:String>
+
+                    <v:String x:Key="Increase">Aumentar imagen</v:String>
+                    <v:String x:Key="Reset">Cancelar todos los cambios</v:String>
+                    <v:String x:Key="Rotate">Girar imagen</v:String>
+                    <v:String x:Key="Metadane">Escribir metadatos</v:String>
+                    <v:String x:Key="write metadat">Carpeta raíz de imágenes:</v:String>
+                    <v:String x:Key="image">Transacciones de imagen -</v:String>
+                    <v:String x:Key="placement">Eliminar metadatos para la imagen</v:String>
+                    <v:String x:Key="thumbnail">Solo las imágenes JPeg con una miniatura almacenada mostrarán una miniatura durante la vista previa.</v:String>
+                    <v:String x:Key="Click">Haga clic derecho en la imagen para seleccionar el cambio de ubicación de metadatos</v:String>
+                    <v:String x:Key="title_user">El nombre debe contener al menos 4 caracteres, pero no más de 13.</v:String>
+                    <v:String x:Key="edit Metadata">Cambiar ubicación (metadatos)</v:String>
+                    <v:String x:Key="default Metadata">Selecciona una imagen para ver los metadatos.</v:String>
+                    <v:String x:Key="instruction">Ver las instrucciones (video)</v:String>
+                    <v:String x:Key="standart_user">Haga doble clic para seleccionar el usuario actual.</v:String>
+                    <v:String x:Key="Moves">Mueve todos los archivos en los que se escriben los Metadatos.</v:String>
+                    <v:String x:Key="Instruction_message">No hay programas en la PC para ver el manual</v:String>
+                    <v:String x:Key="Instruction_title">Ver las instrucciones</v:String>
+                    <v:String x:Key="Instruction_opis">Para ver el video tutorial, presione - Ok, para negarse a ver - Cancelar.</v:String>
+                    <v:String x:Key="Instruction_opis2">Importante Después de verlo, debe cerrar la ventana del tutorial de video para continuar el trabajo.</v:String>
+                    <v:String x:Key="Settings">Configuraciones ...</v:String>
+                    <v:String x:Key="Count_image">Imágenes para mostrar - todas</v:String>
+                    <v:String x:Key="Folder_refresh">Actualizar carpeta seleccionada</v:String>
+                    <v:String x:Key="Insufficient_memory_title">Memoria insuficiente para continuar la ejecución del programa.</v:String>
+                    <v:String x:Key="Insufficient_memory_message">Disminuya el valor del parámetro '1' y ejecute el comando - '2'</v:String>
+                    <v:String x:Key="Insufficient_memory_message_1">Valor recomendado para el parámetro '1'</v:String>
+                    <v:String x:Key="Edit">Selecciona Metadatos para la imagen.</v:String>
+                    <v:String x:Key="rE_title">Error al escribir metadatos</v:String>
+                    <v:String x:Key="rE_message">Repite la entrada de metadatos para la imagen.</v:String>
+                    <v:String x:Key="data_modify">Fecha de cambio:</v:String>
+                    <v:String x:Key="Write_metadata_empty">Escribe los metadatos a todas las imágenes que no los tengan.</v:String>
+
+
+
+
+
+
+
+
+
+
+</ResourceDictionary>
