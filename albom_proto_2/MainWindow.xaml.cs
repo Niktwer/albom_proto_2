@@ -269,7 +269,7 @@ namespace albom_proto_2
 
             PhotoView.current_dir = ImagesDir.Text + Class1.sel_dir + Name_file.Text;
             PhotoView.current_metadata = cur_met.Text.ToString();
-            PhotoView pvWindow = new PhotoView();00
+            PhotoView pvWindow = new PhotoView();
 
             pvWindow.SelectedPhoto = (Photo)PhotosListBox.SelectedItem;
 
