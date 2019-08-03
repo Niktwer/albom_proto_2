@@ -325,11 +325,29 @@ namespace albom_proto_2
                     //"*.jpg,*.bmp,*.gif,*.jpeg,*.png,*.tif";
 
                     //string[] files = Directory.GetFiles(dir);
+                    //new lines move images for PhotosListBox
+
+                    PhotosListBox.SelectedIndex = 0;
+                    while (PhotosListBox.SelectedIndex!=-1)
+                    { PhotosListBox.SelectedIndex++;
+                        Thread.Sleep(10);
+                    }
+                    
+
 
                     int r = 0;
 
-                    string hj = PhotoView.path_file;
+                    // insert lines
+                    //string hj = PhotoView.path_file;
+                    //PhotoView.current_dir = ImagesDir.Text + Class1.sel_dir + Name_file.Text;
+                    //PhotoView.current_metadata = cur_met.Text.ToString();
+                    //PhotoView pvWindow = new PhotoView();
 
+                    //pvWindow.SelectedPhoto = (Photo)PhotosListBox.SelectedItem;
+
+                    //pvWindow.WindowState = WindowState.Maximized;
+                    //pvWindow.Show();
+                    //end insert lines
 
                     for (int i = 0; i <= ext_file.Split(',').Length - 1; i++)
                     {
