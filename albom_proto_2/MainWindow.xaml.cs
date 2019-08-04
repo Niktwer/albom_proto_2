@@ -51,7 +51,7 @@ namespace albom_proto_2
 
 
         //new
-        BackgroundWorker bw;
+        BackgroundWorker bw, bm;
 
         public MainWindow()
         {
@@ -112,15 +112,23 @@ namespace albom_proto_2
             Avtor.Text = Class1.show()[0];
             Avtor.ToolTip= Class1.show()[1];
 
-            //new
+            //indicator create metadata image
             bw = new BackgroundWorker();
             bw.WorkerReportsProgress = true;
             bw.DoWork += new DoWorkEventHandler(bw_DoWork);
             bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChanged);
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
+
+            //indicator move image
+            bm = new BackgroundWorker();
+            bm.WorkerReportsProgress = true;
+            bm.DoWork += new DoWorkEventHandler(bm_DoWork);
+            bm.ProgressChanged += new ProgressChangedEventHandler(bm_ProgressChanged);
+            bm.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bm_RunWorkerCompleted); 
+
         }
 
-        //new
+        //indicator create metadata image
         void bw_DoWork(object sender, DoWorkEventArgs e)
         {
             
@@ -165,8 +173,55 @@ namespace albom_proto_2
             ImagesDir.Text=ImagesDir.Tag.ToString() ;
             //progress.IsIndeterminate = false;
         }
+        //end indicator create metadata image
 
-        
+        //indicator move image
+        void bm_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+            int u = 1;
+            while (u <= kol_image)
+            {
+                double K = Convert.ToDouble(u) / kol_image * 100;
+                bm.ReportProgress((int)K, u - 1);
+                //path_metadata.operacion(2, "");
+                move_image(true);
+
+                u++;
+                //Thread.Sleep(10);
+            }
+        }
+
+        void bm_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+
+
+            Class1.sel_img[1] = PhotosListBox.SelectedIndex.ToString();
+            Class1.sel_img[0] = Name_file.Text;
+
+            //(Photo)PhotosListBox.SelectedItem++;
+
+            if (progress.Maximum == PhotosListBox.Items.Count)
+                progress.Value = PhotosListBox.SelectedIndex;
+            else
+                progress.Value = Convert.ToDouble(e.ProgressPercentage);
+
+            long prog_val = Convert.ToInt64(Convert.ToDouble(PhotosListBox.SelectedIndex + 1) / PhotosListBox.Items.Count * 100);
+
+            ImagesDir.Text = ffg + " (" + Convert.ToInt64(Convert.ToDouble(PhotosListBox.SelectedIndex + 1) / PhotosListBox.Items.Count * 100).ToString() + "%)";
+            PhotosListBox.SelectedIndex++;
+            //Text.Content = k.ToString();
+        }
+
+        void bm_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //Text.Content = "Работа окончена";
+            progress.Visibility = Visibility.Hidden;
+            ImagesDir.Text = ImagesDir.Tag.ToString();
+            //progress.IsIndeterminate = false;
+        }
+        //end indicator move image
+
         private void single()
         {
 
@@ -315,25 +370,28 @@ namespace albom_proto_2
                 case true:
                     //dir
                     show_find(Class1.selecting_path);
+                    bm.RunWorkerAsync(Tuple.Create(kol_image));
                     //Secret secret_oper = new Secret();
-                    string ext_file = "";
-                    if (Class1.type_file)
-                        ext_file = Class1.ext_files[0];
-                    //."*.jpg,*.jpeg";
-                    else
-                        ext_file = Class1.ext_files[1];
+
+                    // не треба початок
+                    //string ext_file = "";
+                    //if (Class1.type_file)
+                    //    ext_file = Class1.ext_files[0];
+                    ////."*.jpg,*.jpeg";
+                    //else
+                    //    ext_file = Class1.ext_files[1];
                     //"*.jpg,*.bmp,*.gif,*.jpeg,*.png,*.tif";
 
                     //string[] files = Directory.GetFiles(dir);
                     //new lines move images for PhotosListBox
 
-                    PhotosListBox.SelectedIndex = 0;
-                    while (PhotosListBox.SelectedIndex!=-1)
-                    { PhotosListBox.SelectedIndex++;
-                        Thread.Sleep(10);
-                    }
-                    
+                    //PhotosListBox.SelectedIndex = 0;
+                    //while (PhotosListBox.SelectedIndex!=-1)
+                    //{ PhotosListBox.SelectedIndex++;
+                    //    Thread.Sleep(10);
+                    //}
 
+                    // не треба кінець
 
                     int r = 0;
 
@@ -397,7 +455,7 @@ namespace albom_proto_2
         }
 
        
-        public void show_find(string path_find)
+        public void  show_find(string path_find)
         {
             //old
             ImagesDir.Text = Class1.other_message().wait[MainWindow.current_languare_index];
