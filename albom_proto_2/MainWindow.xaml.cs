@@ -34,7 +34,7 @@ namespace albom_proto_2
     {
         public PhotoCollection Photos;
         public static int current_languare_index;
-        int kol_image;
+        int kol_image, r;
         //string dir;
         Title_Window pvTitle = new Title_Window();
         Secret path_metadata = new Secret();
@@ -178,7 +178,7 @@ namespace albom_proto_2
         //indicator move image
         void bm_DoWork(object sender, DoWorkEventArgs e)
         {
-
+            r = 0;
             int u = 1;
             while (u <= kol_image)
             {
@@ -356,7 +356,7 @@ namespace albom_proto_2
         private void move_image(bool count)
         {
             //dispatcherTimer_wait.Start();
-            progreebar_continious(true,0);
+            //progreebar_continious(true,0);
             Secret secret_oper = new Secret();
             switch (count)
             {
@@ -369,8 +369,8 @@ namespace albom_proto_2
 
                 case true:
                     //dir
-                    show_find(Class1.selecting_path);
-                    bm.RunWorkerAsync(Tuple.Create(kol_image));
+                    //show_find(Class1.selecting_path);
+                    //bm.RunWorkerAsync(Tuple.Create(PhotosListBox.Items.Count));
                     //Secret secret_oper = new Secret();
 
                     // не треба початок
@@ -393,7 +393,7 @@ namespace albom_proto_2
 
                     // не треба кінець
 
-                    int r = 0;
+
 
                     // insert lines
                     //string hj = PhotoView.path_file;
@@ -407,30 +407,33 @@ namespace albom_proto_2
                     //pvWindow.Show();
                     //end insert lines
 
-                    for (int i = 0; i <= ext_file.Split(',').Length - 1; i++)
-                    {
-                        //dir
-                        foreach (string s in Directory.GetFiles(Class1.selecting_path, ext_file.Split(',')[i]))
-                        {
-                            string[] hh = s.Split('\\');
-                            foreach (string gg in Class1.error_images)
-                            {
-                                if (hh[hh.Length - 1] == gg)
-                                {
-                                    Oval.IsEnabled = false;
-                                    goto err;
-                                }
-                            }
+                    //not do
+                    //for (int i = 0; i <= ext_file.Split(',').Length - 1; i++)
+                    //{
+                        //no do dir
+                        //foreach (string s in Directory.GetFiles(Class1.selecting_path, ext_file.Split(',')[i]))
+                        //{
+                            string JJK = Class1.selecting_path+"\\"+ Name_file.Text;
+                            //string[] hh = s.Split('\\');
+                            //foreach (string gg in Class1.error_images)
+                            //{
+                            //    if (hh[hh.Length - 1] == gg)
+                            //    {
+                            //        Oval.IsEnabled = false;
+                            //        goto err;
+                            //    }
+                            //}
 
-                            secret_oper.operacion(1, s);
+                    // end do
+                            secret_oper.operacion(1, JJK);
 
                             if (Secret.rez != Class1.nothing_metadata[current_languare_index])
-                                secret_oper.operacion(0, s);
+                                secret_oper.operacion(0, JJK);
                            r++;
                             err:;
-                            //secret_oper.operacion(0, s);
-                        }
-                    }
+                            secret_oper.operacion(0, JJK);
+                        //}
+                    //}
 
                     if (r == 0)
                         System.Windows.MessageBox.Show(Class1.nothing_metadata[current_languare_index], FindResource("Moves").ToString(), MessageBoxButton.OK);
@@ -1255,7 +1258,7 @@ namespace albom_proto_2
 
      
 
-        private void OnMovedClick(object sender, RoutedEventArgs e)
+        private void  OnMovedClick(object sender, RoutedEventArgs e)
         {
             //умови виконання
             if (kol_image == 0)
@@ -1263,11 +1266,11 @@ namespace albom_proto_2
             //dir
             if (System.Windows.MessageBox.Show(Class1.move_up().message[current_languare_index], Class1.move_up().title[current_languare_index] + " " + Class1.selecting_path.Split(':')[0] + ":\\" + Class1.albom + Class1.assembly(), MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
             {
-                progreebar_continious(true,0);
+                //progreebar_continious(true,0);
                 ImagesDir.Text = Class1.other_message().wait[MainWindow.current_languare_index];
-                PhotosListBox.SelectedIndex = -1;
+                PhotosListBox.SelectedIndex =0;
                 move_image(true);
-                progreebar_continious(false,0);
+                //progreebar_continious(false,0);
             }
             else
                 return;
