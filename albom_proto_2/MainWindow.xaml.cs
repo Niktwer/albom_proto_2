@@ -176,6 +176,7 @@ namespace albom_proto_2
         //end indicator create metadata image
 
         //indicator move image
+
         void bm_DoWork(object sender, DoWorkEventArgs e)
         {
             r = 0;
@@ -185,7 +186,10 @@ namespace albom_proto_2
                 double K = Convert.ToDouble(u) / kol_image * 100;
                 bm.ReportProgress((int)K, u - 1);
                 //path_metadata.operacion(2, "");
-                move_image(true);
+                //move_image(true);
+
+                if (cur_met.Text != Class1.nothing_metadata[current_languare_index])
+                    path_metadata.operacion(0, Class1.selecting_path + "\\" + Name_file.Text);
 
                 u++;
                 //Thread.Sleep(10);
@@ -369,75 +373,17 @@ namespace albom_proto_2
                     break;
 
                 case true:
-                    //dir
-                    //show_find(Class1.selecting_path);
-                    //bm.RunWorkerAsync(Tuple.Create(PhotosListBox.Items.Count));
-                    //Secret secret_oper = new Secret();
-
-                    // не треба початок
-                    //string ext_file = "";
-                    //if (Class1.type_file)
-                    //    ext_file = Class1.ext_files[0];
-                    ////."*.jpg,*.jpeg";
-                    //else
-                    //    ext_file = Class1.ext_files[1];
-                    //"*.jpg,*.bmp,*.gif,*.jpeg,*.png,*.tif";
-
-                    //string[] files = Directory.GetFiles(dir);
-                    //new lines move images for PhotosListBox
-
-                    //PhotosListBox.SelectedIndex = 0;
-                    //while (PhotosListBox.SelectedIndex!=-1)
-                    //{ PhotosListBox.SelectedIndex++;
-                    //    Thread.Sleep(10);
-                    //}
-
-                    // не треба кінець
-
-
-
-                    // insert lines
-                    //string hj = PhotoView.path_file;
-                    //PhotoView.current_dir = ImagesDir.Text + Class1.sel_dir + Name_file.Text;
-                    //PhotoView.current_metadata = cur_met.Text.ToString();
-                    //PhotoView pvWindow = new PhotoView();
-
-                    //pvWindow.SelectedPhoto = (Photo)PhotosListBox.SelectedItem;
-
-                    //pvWindow.WindowState = WindowState.Maximized;
-                    //pvWindow.Show();
-                    //end insert lines
-
-                    //not do
-                    //for (int i = 0; i <= ext_file.Split(',').Length - 1; i++)
-                    //{
-                        //no do dir
-                        //foreach (string s in Directory.GetFiles(Class1.selecting_path, ext_file.Split(',')[i]))
-                        //{
+                   
                             string JJK = Class1.selecting_path+"\\"+ Name_file.Text;
-                            //string[] hh = s.Split('\\');
-                            //foreach (string gg in Class1.error_images)
-                            //{
-                            //    if (hh[hh.Length - 1] == gg)
-                            //    {
-                            //        Oval.IsEnabled = false;
-                            //        goto err;
-                            //    }
-                            //}
+                            
+                            //secret_oper.operacion(1, JJK);
 
-                    // end do
-                            secret_oper.operacion(1, JJK);
+                            if (cur_met.Text != Class1.nothing_metadata[current_languare_index])
+                                secret_oper.operacion(0, Class1.selecting_path + "\\" + Name_file.Text);
 
-                            if (Secret.rez != Class1.nothing_metadata[current_languare_index])
-                                secret_oper.operacion(0, JJK);
-                           r++;
-                            err:;
-                            secret_oper.operacion(0, JJK);
-                        //}
-                    //}
-
-                    if (r == 0)
-                        System.Windows.MessageBox.Show(Class1.nothing_metadata[current_languare_index], FindResource("Moves").ToString(), MessageBoxButton.OK);
+                    //secret_oper.operacion(0, JJK);
+                    //if (r == 0)
+                    //    System.Windows.MessageBox.Show(Class1.nothing_metadata[current_languare_index], FindResource("Moves").ToString(), MessageBoxButton.OK);
 
 
                     break;
