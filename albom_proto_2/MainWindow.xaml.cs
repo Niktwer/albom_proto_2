@@ -190,6 +190,7 @@ namespace albom_proto_2
                 u++;
                 //Thread.Sleep(10);
             }
+            update_dir();
         }
 
         void bm_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -1262,25 +1263,25 @@ namespace albom_proto_2
         {
             //умови виконання
             if (kol_image == 0)
+            {
+                cur_met.Text = FindResource("default Metadata").ToString();
                 return;
+            }
+                
             //dir
             if (System.Windows.MessageBox.Show(Class1.move_up().message[current_languare_index], Class1.move_up().title[current_languare_index] + " " + Class1.selecting_path.Split(':')[0] + ":\\" + Class1.albom + Class1.assembly(), MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
             {
                 //progreebar_continious(true,0);
                 ImagesDir.Text = Class1.other_message().wait[MainWindow.current_languare_index];
                 PhotosListBox.SelectedIndex =0;
-                move_image(true);
+                bm.RunWorkerAsync(Tuple.Create(kol_image));
+
+                //move_image(true);
                 //progreebar_continious(false,0);
+                
             }
             else
                 return;
-
-            update_dir();
-
-            if (kol_image != 0)
-            { }
-            else
-                cur_met.Text = FindResource("default Metadata").ToString();
 
         }
 
