@@ -188,13 +188,14 @@ namespace albom_proto_2
                 //path_metadata.operacion(2, "");
                 //move_image(true);
 
-                if (cur_met.Text != Class1.nothing_metadata[current_languare_index])
-                    path_metadata.operacion(0, Class1.selecting_path + "\\" + Name_file.Text);
+                 
+                if (Secret.rez.ToString() != Class1.nothing_metadata[current_languare_index])
+                    path_metadata.operacion(0, Class1.selecting_path +Class1.sel_dir + Secret.rez.ToString());
 
                 u++;
                 //Thread.Sleep(10);
             }
-            update_dir();
+            
         }
 
         void bm_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -215,14 +216,17 @@ namespace albom_proto_2
 
             ImagesDir.Text = ffg + " (" + Convert.ToInt64(Convert.ToDouble(PhotosListBox.SelectedIndex + 1) / PhotosListBox.Items.Count * 100).ToString() + "%)";
             PhotosListBox.SelectedIndex++;
+            string fff = Secret.rez.ToString();
             //Text.Content = k.ToString();
         }
 
         void bm_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             //Text.Content = "Работа окончена";
+            
             progress.Visibility = Visibility.Hidden;
             ImagesDir.Text = ImagesDir.Tag.ToString();
+            update_dir();
             //progress.IsIndeterminate = false;
         }
         //end indicator move image
@@ -1218,6 +1222,7 @@ namespace albom_proto_2
             if (System.Windows.MessageBox.Show(Class1.move_up().message[current_languare_index], Class1.move_up().title[current_languare_index] + " " + Class1.selecting_path.Split(':')[0] + ":\\" + Class1.albom + Class1.assembly(), MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
             {
                 //progreebar_continious(true,0);
+                ImagesDir.Tag = ImagesDir.Text;
                 ImagesDir.Text = Class1.other_message().wait[MainWindow.current_languare_index];
                 PhotosListBox.SelectedIndex =0;
                 bm.RunWorkerAsync(Tuple.Create(kol_image));
