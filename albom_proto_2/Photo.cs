@@ -219,7 +219,7 @@ namespace albom_proto_2
                 //"*.jpg,*.jpeg";
                 else
                     ext_files = Class1.ext_files[1];
-                //"*.jpg,*.bmp,*.gif,*.jpeg,*.png,*.tif";
+                //"*.jpg,*.bmp,*.gif,*.jpeg,*.png,*.tiff";
 
                 for (int j = 0; j <= ext_files.Split(',').Length - 1; j++)
                 {

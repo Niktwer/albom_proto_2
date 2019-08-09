@@ -181,6 +181,9 @@ namespace albom_proto_2
         {
             r = 0;
             int u = 1;
+
+            //Secret secret_oper = new Secret();
+
             while (u <= kol_image)
             {
                 double K = Convert.ToDouble(u) / kol_image * 100;
@@ -189,9 +192,8 @@ namespace albom_proto_2
                 //move_image(true);
 
                  
-                if (Secret.rez.ToString() != Class1.nothing_metadata[current_languare_index])
-                    path_metadata.operacion(0, Class1.selecting_path +Class1.sel_dir + Secret.rez.ToString());
-
+                
+                //Class1.selecting_path +Class1.sel_dir + Secret.rez.ToString()
                 u++;
                 //Thread.Sleep(10);
             }
@@ -211,6 +213,9 @@ namespace albom_proto_2
                 progress.Value = PhotosListBox.SelectedIndex;
             else
                 progress.Value = Convert.ToDouble(e.ProgressPercentage);
+            if (cur_met.Text.ToString() != Class1.nothing_metadata[current_languare_index])
+                path_metadata.operacion(0, Class1.selecting_path + Class1.sel_dir + Name_file.Text);
+
 
             long prog_val = Convert.ToInt64(Convert.ToDouble(PhotosListBox.SelectedIndex + 1) / PhotosListBox.Items.Count * 100);
 
@@ -1221,14 +1226,12 @@ namespace albom_proto_2
             //dir
             if (System.Windows.MessageBox.Show(Class1.move_up().message[current_languare_index], Class1.move_up().title[current_languare_index] + " " + Class1.selecting_path.Split(':')[0] + ":\\" + Class1.albom + Class1.assembly(), MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
             {
-                //progreebar_continious(true,0);
                 ImagesDir.Tag = ImagesDir.Text;
                 ImagesDir.Text = Class1.other_message().wait[MainWindow.current_languare_index];
                 PhotosListBox.SelectedIndex =0;
                 bm.RunWorkerAsync(Tuple.Create(kol_image));
 
                 //move_image(true);
-                //progreebar_continious(false,0);
                 
             }
             else
