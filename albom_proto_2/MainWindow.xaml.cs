@@ -221,6 +221,7 @@ namespace albom_proto_2
 
             ImagesDir.Text = ffg + " (" + Convert.ToInt64(Convert.ToDouble(PhotosListBox.SelectedIndex + 1) / PhotosListBox.Items.Count * 100).ToString() + "%)";
             PhotosListBox.SelectedIndex++;
+            string ggg = cur_met.Text;
             string fff = Secret.rez.ToString();
             //Text.Content = k.ToString();
         }
@@ -679,8 +680,8 @@ namespace albom_proto_2
 
         private void PhotosListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (progress.IsVisible)
-                return;
+            //if (progress.IsVisible)
+            //    return;
 
             foreach(string gg in Class1.error_images)
             {
