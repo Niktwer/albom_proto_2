@@ -52,6 +52,8 @@ namespace albom_proto_2
         public const string begin_html = "\\index.html";
         public const string total_resources = "zip";
         public const string reference_resource = "reference";
+        public const long min_size_file = 3072;// мінімальний розмір файлу 3 кб
+
 
         //string[] activity_local = new string[] { "MainActivity", "lic", "d0" };
 

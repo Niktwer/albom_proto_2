@@ -213,6 +213,7 @@ namespace albom_proto_2
                 progress.Value = PhotosListBox.SelectedIndex;
             else
                 progress.Value = Convert.ToDouble(e.ProgressPercentage);
+
             if (cur_met.Text.ToString() != Class1.nothing_metadata[current_languare_index])
                 path_metadata.operacion(0, Class1.selecting_path + Class1.sel_dir + Name_file.Text);
 
@@ -221,8 +222,8 @@ namespace albom_proto_2
 
             ImagesDir.Text = ffg + " (" + Convert.ToInt64(Convert.ToDouble(PhotosListBox.SelectedIndex + 1) / PhotosListBox.Items.Count * 100).ToString() + "%)";
             PhotosListBox.SelectedIndex++;
-            string ggg = cur_met.Text;
-            string fff = Secret.rez.ToString();
+            //string ggg = cur_met.Text;
+            //string fff = Secret.rez.ToString();
             //Text.Content = k.ToString();
         }
 
@@ -230,7 +231,7 @@ namespace albom_proto_2
         {
             //Text.Content = "Работа окончена";
             
-            progress.Visibility = Visibility.Hidden;
+            //progress.Visibility = Visibility.Hidden;
             ImagesDir.Text = ImagesDir.Tag.ToString();
             update_dir();
             //progress.IsIndeterminate = false;
@@ -1230,10 +1231,22 @@ namespace albom_proto_2
                 ImagesDir.Tag = ImagesDir.Text;
                 ImagesDir.Text = Class1.other_message().wait[MainWindow.current_languare_index];
                 PhotosListBox.SelectedIndex =0;
+
+                progress.IsIndeterminate = false;
+                progress.Value = 0;
+                progress.Visibility = Visibility.Visible;
+
+                if (kol_image <= 100)
+                    progress.Maximum = kol_image;
+                else
+                    progress.Maximum = 100;
+
+
+
                 bm.RunWorkerAsync(Tuple.Create(kol_image));
 
                 //move_image(true);
-                
+
             }
             else
                 return;
