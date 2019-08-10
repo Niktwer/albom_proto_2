@@ -31,7 +31,7 @@ namespace albom_proto_2
         public static bool type_file;
         public static string[] error_images;
         public static int error_count=0;
-        public static string[] ext_files=new string[]{"*.jpg","*.jpeg", "*.bmp","*.gif","*.png","*.tiff" };
+        public static string[] ext_files=new string[]{ "*.jpg,*.jpeg","*.jpg, *.bmp,*.gif,*.jpeg,*.png,*.tiff" };
         public static bool foto_click = false;
         //пароль
         public static  string user_name;

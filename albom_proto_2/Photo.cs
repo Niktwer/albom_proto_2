@@ -243,7 +243,7 @@ namespace albom_proto_2
                             return;
 
                         // размер файлу більше  або дорівнює 10 кілобайт
-                        if (f.Length < 10240)
+                        if (f.Length < 3072)
                             goto ver;
 
 
