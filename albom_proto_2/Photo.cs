@@ -242,7 +242,7 @@ namespace albom_proto_2
                         if (kol>=Class1.all_kol && Class1.slider_value != 0)
                             return;
 
-                        // размер файлу більше  або дорівнює 10 кілобайт
+                        // размер файлу більше  3 KB
                         if (f.Length < Class1.min_size_file)
                             goto ver;
 

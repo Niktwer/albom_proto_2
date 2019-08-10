@@ -182,20 +182,13 @@ namespace albom_proto_2
             r = 0;
             int u = 1;
 
-            //Secret secret_oper = new Secret();
 
             while (u <= kol_image)
             {
                 double K = Convert.ToDouble(u) / kol_image * 100;
                 bm.ReportProgress((int)K, u - 1);
-                //path_metadata.operacion(2, "");
-                //move_image(true);
-
-                 
-                
-                //Class1.selecting_path +Class1.sel_dir + Secret.rez.ToString()
                 u++;
-                //Thread.Sleep(10);
+                Thread.Sleep(1000);
             }
             
         }
@@ -222,9 +215,6 @@ namespace albom_proto_2
 
             ImagesDir.Text = ffg + " (" + Convert.ToInt64(Convert.ToDouble(PhotosListBox.SelectedIndex + 1) / PhotosListBox.Items.Count * 100).ToString() + "%)";
             PhotosListBox.SelectedIndex++;
-            //string ggg = cur_met.Text;
-            //string fff = Secret.rez.ToString();
-            //Text.Content = k.ToString();
         }
 
         void bm_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -1228,9 +1218,6 @@ namespace albom_proto_2
             //dir
             if (System.Windows.MessageBox.Show(Class1.move_up().message[current_languare_index], Class1.move_up().title[current_languare_index] + " " + Class1.selecting_path.Split(':')[0] + ":\\" + Class1.albom + Class1.assembly(), MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
             {
-                ImagesDir.Tag = ImagesDir.Text;
-                ImagesDir.Text = Class1.other_message().wait[MainWindow.current_languare_index];
-                PhotosListBox.SelectedIndex =0;
 
                 progress.IsIndeterminate = false;
                 progress.Value = 0;
@@ -1241,7 +1228,13 @@ namespace albom_proto_2
                 else
                     progress.Maximum = 100;
 
+                PhotosListBox.SelectedIndex =0;
+                ImagesDir.Tag = ImagesDir.Text;
+                ImagesDir.Text = Class1.other_message().wait[MainWindow.current_languare_index];
+                ffg = ImagesDir.Text;
 
+                Class1.sel_img[1] = PhotosListBox.SelectedIndex.ToString();
+                Class1.sel_img[0] = Name_file.Text;
 
                 bm.RunWorkerAsync(Tuple.Create(kol_image));
 
