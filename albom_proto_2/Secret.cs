@@ -342,14 +342,32 @@ namespace albom_proto_2
 
                     //    // Move the file
 
+                    //var fileName = (string)e.Argument;
+                    var fsize = fileInf.Length;
+                    var bytesForPercent = fsize / 100;
+
+                    using (var inputFs = new FileStream(input, FileMode.Open, FileAccess.Read))
+                    using (var outputFs = new FileStream(output_file, FileMode.Create, FileAccess.Write))
+                    {
+                        int counter = 0;
+                        while (inputFs.Position < inputFs.Length)
+                        {
+                            byte b = (byte)inputFs.ReadByte();
+                            outputFs.WriteByte(b);
+                            counter++;
+
+                            //if (counter % bytesForPercent == 0)
+                            //    bgwCopyFile.ReportProgress(counter / (int)bytesForPercent);
+                        }
+                    }
 
                     //    //using (var stream = File.Move(output_file, input))
                     //    //{
                     //    //    // Use stream
                     //    //}
-                    Thread.Sleep(DelayOnRetry);
-                    //    //GC.Collect();
-                    fileInf.MoveTo(output_file);
+                    //Thread.Sleep(DelayOnRetry);
+                    ////    //GC.Collect();
+                    //fileInf.MoveTo(output_file);
 
                 }
 

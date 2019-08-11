@@ -180,15 +180,23 @@ namespace albom_proto_2
         void bm_DoWork(object sender, DoWorkEventArgs e)
         {
             r = 0;
-            int u = 1;
+            int u=0;
 
+            for (int i=0; i<= PhotosListBox.Items.Count;i++)
+            {
+                string hh = PhotosListBox.Items.SourceCollection.ToString();
+            }
 
+            //foreach (string uu in PhotosListBox.Items.SourceCollection)
+            //{
+
+            //    //u = uu;
+            //}
             while (u <= kol_image)
             {
                 double K = Convert.ToDouble(u) / kol_image * 100;
                 bm.ReportProgress((int)K, u - 1);
                 u++;
-                Thread.Sleep(1000);
             }
             
         }
