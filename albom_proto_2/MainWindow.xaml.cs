@@ -179,49 +179,69 @@ namespace albom_proto_2
 
         void bm_DoWork(object sender, DoWorkEventArgs e)
         {
-            r = 0;
-            int u=0;
 
-            for (int i=0; i<= PhotosListBox.Items.Count;i++)
-            {
-                string hh = PhotosListBox.Items.SourceCollection.ToString();
+            for (int i=0; i<= PhotosListBox.Items.Count-1;i++)
+            {                
+                double K = Convert.ToDouble(i) / PhotosListBox.Items.Count  * 100;
+                bm.ReportProgress((int)K, i );
             }
-
-            //foreach (string uu in PhotosListBox.Items.SourceCollection)
-            //{
-
-            //    //u = uu;
-            //}
-            while (u <= kol_image)
-            {
-                double K = Convert.ToDouble(u) / kol_image * 100;
-                bm.ReportProgress((int)K, u - 1);
-                u++;
-            }
-            
+          
         }
 
         void bm_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            //string hh = PhotosListBox.Items[i].ToString();
+            string root = Regex.Split(PhotosListBox.Items[(int)e.UserState].ToString(), ":///")[1];
+            string output = "";
 
+            if (cur_met.Text.ToString() == Class1.nothing_metadata[current_languare_index])
+                return;
+            else
+                output = root.Split(':')[0]+":"+ cur_met.Text + Class1.sel_dir + Name_file.Text;
 
-            Class1.sel_img[1] = PhotosListBox.SelectedIndex.ToString();
-            Class1.sel_img[0] = Name_file.Text;
-
-            //(Photo)PhotosListBox.SelectedItem++;
-
+            progress.Visibility = Visibility.Visible;
             if (progress.Maximum == PhotosListBox.Items.Count)
                 progress.Value = PhotosListBox.SelectedIndex;
             else
                 progress.Value = Convert.ToDouble(e.ProgressPercentage);
 
-            if (cur_met.Text.ToString() != Class1.nothing_metadata[current_languare_index])
-                path_metadata.operacion(0, Class1.selecting_path + Class1.sel_dir + Name_file.Text);
+            ImagesDir.Text = ffg + " (" + Convert.ToInt64(Convert.ToDouble(PhotosListBox.SelectedIndex + 1) / PhotosListBox.Items.Count * 100).ToString() + "%)";
+
+            //var fileName = (string)e.Argument;
+            //var fsize = new FileInfo(root).Length;
+            //var bytesForPercent = fsize / 100;
+
+            //using (var inputFs = new FileStream(root, FileMode.Open, FileAccess.Read))
+            //using (var outputFs = new FileStream(output, FileMode.Create, FileAccess.Write))
+            //{
+            //    int counter = 0;
+            //    while (inputFs.Position < inputFs.Length)
+            //    {
+            //        byte b = (byte)inputFs.ReadByte();
+            //        outputFs.WriteByte(b);
+            //        counter++;
+
+            //        //if (counter % bytesForPercent == 0)
+            //        //    bgwCopyFile.ReportProgress(counter / (int)bytesForPercent);
+            //    }
+            //}
+
+            //if (File.Exists(destinationFileName))
+            //    File.Delete(destinationFileName);
+
+
+            //Class1.sel_img[1] = PhotosListBox.SelectedIndex.ToString();
+            //Class1.sel_img[0] = Name_file.Text;
+
+            //(Photo)PhotosListBox.SelectedItem++;
+
+
+            //if (cur_met.Text.ToString() != Class1.nothing_metadata[current_languare_index])
+            //    path_metadata.operacion(0, Class1.selecting_path + Class1.sel_dir + Name_file.Text);
 
 
             long prog_val = Convert.ToInt64(Convert.ToDouble(PhotosListBox.SelectedIndex + 1) / PhotosListBox.Items.Count * 100);
 
-            ImagesDir.Text = ffg + " (" + Convert.ToInt64(Convert.ToDouble(PhotosListBox.SelectedIndex + 1) / PhotosListBox.Items.Count * 100).ToString() + "%)";
             PhotosListBox.SelectedIndex++;
         }
 
@@ -363,6 +383,11 @@ namespace albom_proto_2
 
         public void SetBar (int j)
         {
+            //if (j <= 100)
+            //    progress.Maximum = j;
+            //else
+            //    progress.Maximum = 100;
+
             progress.Maximum =j; 
         }
 
@@ -1231,10 +1256,12 @@ namespace albom_proto_2
                 progress.Value = 0;
                 progress.Visibility = Visibility.Visible;
 
-                if (kol_image <= 100)
-                    progress.Maximum = kol_image;
-                else
-                    progress.Maximum = 100;
+                SetBar(kol_image);
+
+                //if (kol_image <= 100)
+                //    progress.Maximum = kol_image;
+                //else
+                //    progress.Maximum = 100;
 
                 PhotosListBox.SelectedIndex =0;
                 ImagesDir.Tag = ImagesDir.Text;
