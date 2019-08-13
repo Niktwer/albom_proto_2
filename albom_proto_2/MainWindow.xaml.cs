@@ -181,31 +181,61 @@ namespace albom_proto_2
         {
 
             for (int i=0; i<= PhotosListBox.Items.Count-1;i++)
-            {                
+            {
+                string root1 = Regex.Split(PhotosListBox.Items[i].ToString(), ":///")[1];
+                path_metadata.operacion(1, root1);
+                string output1 = root1[0]+":"+Secret.rez;
+
+                //var fileName = (string)e.Argument;
+                var fsize = new FileInfo(root1).Length;
+                var bytesForPercent = fsize / 100;
+
+                using (var inputFs = new FileStream(root1, FileMode.Open, FileAccess.Read))
+                using (var outputFs = new FileStream(output1, FileMode.Create, FileAccess.Write))
+                {
+                    int counter = 0;
+                    while (inputFs.Position < inputFs.Length)
+                    {
+                        byte b = (byte)inputFs.ReadByte();
+                        outputFs.WriteByte(b);
+                        counter++;
+
+                        //if (counter % bytesForPercent == 0)
+                        //    bgwCopyFile.ReportProgress(counter / (int)bytesForPercent);
+                    }
+                }
+
+
+
                 double K = Convert.ToDouble(i) / PhotosListBox.Items.Count  * 100;
                 bm.ReportProgress((int)K, i );
+                Thread.Sleep(100);
             }
-          
+
         }
 
         void bm_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             //string hh = PhotosListBox.Items[i].ToString();
-            string root = Regex.Split(PhotosListBox.Items[(int)e.UserState].ToString(), ":///")[1];
-            string output = "";
 
-            if (cur_met.Text.ToString() == Class1.nothing_metadata[current_languare_index])
-                return;
-            else
-                output = root.Split(':')[0]+":"+ cur_met.Text + Class1.sel_dir + Name_file.Text;
+            //new
+            //string root = Regex.Split(PhotosListBox.Items[(int)e.UserState].ToString(), ":///")[1];
+            //string output = "";
 
-            progress.Visibility = Visibility.Visible;
+            //if (cur_met.Text.ToString() == Class1.nothing_metadata[current_languare_index])
+            //    return;
+            //else
+            //    output = root.Split(':')[0]+":"+ cur_met.Text + Class1.sel_dir + Name_file.Text;
+
+            
             if (progress.Maximum == PhotosListBox.Items.Count)
                 progress.Value = PhotosListBox.SelectedIndex;
             else
                 progress.Value = Convert.ToDouble(e.ProgressPercentage);
 
             ImagesDir.Text = ffg + " (" + Convert.ToInt64(Convert.ToDouble(PhotosListBox.SelectedIndex + 1) / PhotosListBox.Items.Count * 100).ToString() + "%)";
+
+            //end
 
             //var fileName = (string)e.Argument;
             //var fsize = new FileInfo(root).Length;
