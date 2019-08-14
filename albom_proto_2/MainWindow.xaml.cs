@@ -183,8 +183,10 @@ namespace albom_proto_2
             for (int i=0; i<= PhotosListBox.Items.Count-1;i++)
             {
                 string root1 = Regex.Split(PhotosListBox.Items[i].ToString(), ":///")[1];
+                string[] root2 = root1.Split('/');
                 path_metadata.operacion(1, root1);
-                string output1 = root1[0]+":"+Secret.rez;
+                string output1 = root1[0]+":"+Secret.rez+Class1.sel_dir+root2[root2.Length-1];
+                output1= output1.Replace('\\', '/');
 
                 //var fileName = (string)e.Argument;
                 var fsize = new FileInfo(root1).Length;
@@ -209,7 +211,7 @@ namespace albom_proto_2
 
                 double K = Convert.ToDouble(i) / PhotosListBox.Items.Count  * 100;
                 bm.ReportProgress((int)K, i );
-                Thread.Sleep(100);
+                //Thread.Sleep(100);
             }
 
         }
