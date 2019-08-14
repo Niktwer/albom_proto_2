@@ -188,32 +188,23 @@ namespace albom_proto_2
                 string output1 = root1[0]+":"+Secret.rez+Class1.sel_dir+root2[root2.Length-1];
                 output1= output1.Replace('\\', '/');
 
-                //var fileName = (string)e.Argument;
-                var fsize = new FileInfo(root1).Length;
-                var bytesForPercent = fsize / 100;
+
+                double K = Convert.ToDouble(i) / PhotosListBox.Items.Count  * Class1.progress_max;
+                bm.ReportProgress((int)K, i);
 
                 using (var inputFs = new FileStream(root1, FileMode.Open, FileAccess.Read))
                 using (var outputFs = new FileStream(output1, FileMode.Create, FileAccess.Write))
                 {
-                    int counter = 0;
-                    while (inputFs.Position < inputFs.Length)
+                    for (long nn=0; nn< inputFs.Length;nn++)
                     {
                         byte b = (byte)inputFs.ReadByte();
                         outputFs.WriteByte(b);
-                        counter++;
-
-                        //if (counter % bytesForPercent == 0)
-                        //    bgwCopyFile.ReportProgress(counter / (int)bytesForPercent);
+                        nn = inputFs.Position;
                     }
                 }
-
-
-
-                double K = Convert.ToDouble(i) / PhotosListBox.Items.Count  * 100;
-                bm.ReportProgress((int)K, i );
-                //Thread.Sleep(100);
+                if (File.Exists(output1))
+                File.Delete(root1);
             }
-
         }
 
         void bm_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -420,7 +411,8 @@ namespace albom_proto_2
             //else
             //    progress.Maximum = 100;
 
-            progress.Maximum =j; 
+            progress.Maximum =j;
+            Class1.progress_max = j;
         }
 
         

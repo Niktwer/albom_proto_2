@@ -74,6 +74,8 @@ namespace albom_proto_2
         // new selecting image and dir
         public static string[] sel_img = new string[2];
         public const string sel_dir = "\\";
+        public static int progress_max;
+
 
         public struct Name_flag_languare
         {
