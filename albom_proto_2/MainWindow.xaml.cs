@@ -185,6 +185,10 @@ namespace albom_proto_2
                 string root1 = Regex.Split(PhotosListBox.Items[i].ToString(), ":///")[1];
                 string[] root2 = root1.Split('/');
                 path_metadata.operacion(1, root1);
+
+                if (Secret.rez == Class1.nothing_metadata[current_languare_index])
+                    goto no_met;
+
                 string output1 = root1[0]+":"+Secret.rez+Class1.sel_dir+root2[root2.Length-1];
                 output1= output1.Replace('\\', '/');
 
@@ -204,7 +208,11 @@ namespace albom_proto_2
                 }
                 if (File.Exists(output1))
                 File.Delete(root1);
+
+                no_met:;
             }
+
+
         }
 
         void bm_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -272,9 +280,10 @@ namespace albom_proto_2
         {
             //Text.Content = "Работа окончена";
             
-            //progress.Visibility = Visibility.Hidden;
+            progress.Visibility = Visibility.Hidden;
             ImagesDir.Text = ImagesDir.Tag.ToString();
             update_dir();
+            PhotosListBox.IsEnabled = true;
             //progress.IsIndeterminate = false;
         }
         //end indicator move image
@@ -1275,7 +1284,7 @@ namespace albom_proto_2
             //dir
             if (System.Windows.MessageBox.Show(Class1.move_up().message[current_languare_index], Class1.move_up().title[current_languare_index] + " " + Class1.selecting_path.Split(':')[0] + ":\\" + Class1.albom + Class1.assembly(), MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
             {
-
+                
                 progress.IsIndeterminate = false;
                 progress.Value = 0;
                 progress.Visibility = Visibility.Visible;
@@ -1295,6 +1304,7 @@ namespace albom_proto_2
                 Class1.sel_img[1] = PhotosListBox.SelectedIndex.ToString();
                 Class1.sel_img[0] = Name_file.Text;
 
+                PhotosListBox.IsEnabled = false;
                 bm.RunWorkerAsync(Tuple.Create(kol_image));
 
                 //move_image(true);
