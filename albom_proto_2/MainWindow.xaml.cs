@@ -199,7 +199,7 @@ namespace albom_proto_2
                 using (var inputFs = new FileStream(root1, FileMode.Open, FileAccess.Read))
                 using (var outputFs = new FileStream(output1, FileMode.Create, FileAccess.Write))
                 {
-                    for (long nn=0; nn< inputFs.Length;nn++)
+                    for (long nn=0; nn<= inputFs.Length;nn++)
                     {
                         byte b = (byte)inputFs.ReadByte();
                         outputFs.WriteByte(b);
