@@ -591,7 +591,7 @@
                 <TextBlock Name="Avtor" Background="Transparent"  Text="fhhhhhhhhhhhhh" TextWrapping="Wrap" FontStyle="Oblique" FontSize="10" Width="727" Margin="5,0,0,0" />
             </StatusBarItem>
             <StatusBarItem x:Name="BN" Grid.Column="2" Margin="0,0,0,0" BorderThickness="0" Background="Cyan" RenderTransformOrigin="0.497,0.628" >
-                <ProgressBar x:Name="progress" Width="{Binding Width, ElementName=PR}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0" Height="6" Visibility="Hidden" Background="#008080" BorderBrush="Cyan">
+                <ProgressBar x:Name="progress" Width="{Binding Width, ElementName=PR}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0" Height="4" Visibility="Hidden" Background="#008080" BorderBrush="Cyan">
                     <ProgressBar.Foreground>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="200,0" MappingMode="Absolute">
                             <GradientStop Color="DarkGray"  Offset="0" />

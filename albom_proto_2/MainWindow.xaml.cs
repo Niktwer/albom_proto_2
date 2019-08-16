@@ -185,17 +185,23 @@ namespace albom_proto_2
                 string root1 = Regex.Split(PhotosListBox.Items[i].ToString(), ":///")[1];
                 string[] root2 = root1.Split('/');
                 path_metadata.operacion(1, root1);
-                string output1 = root1[0]+":"+Secret.rez+Class1.sel_dir+root2[root2.Length-1];
+
+                if (Secret.rez == Class1.nothing_metadata[current_languare_index])
+                    goto no_met;
+
+                    string output1 = root1[0]+":"+Secret.rez+Class1.sel_dir+root2[root2.Length-1];
                 output1= output1.Replace('\\', '/');
 
 
                 double K = Convert.ToDouble(i) / PhotosListBox.Items.Count  * Class1.progress_max;
                 bm.ReportProgress((int)K, i);
 
+                //File.Move(root1, output1);
+
                 using (var inputFs = new FileStream(root1, FileMode.Open, FileAccess.Read))
                 using (var outputFs = new FileStream(output1, FileMode.Create, FileAccess.Write))
                 {
-                    for (long nn=0; nn< inputFs.Length;nn++)
+                    for (long nn = 0; nn <= inputFs.Length; nn++)
                     {
                         byte b = (byte)inputFs.ReadByte();
                         outputFs.WriteByte(b);
@@ -204,6 +210,8 @@ namespace albom_proto_2
                 }
                 if (File.Exists(output1))
                 File.Delete(root1);
+
+                no_met:;
             }
         }
 
@@ -272,9 +280,10 @@ namespace albom_proto_2
         {
             //Text.Content = "Работа окончена";
             
-            //progress.Visibility = Visibility.Hidden;
+            progress.Visibility = Visibility.Hidden;
             ImagesDir.Text = ImagesDir.Tag.ToString();
             update_dir();
+            PhotosListBox.IsEnabled = true;
             //progress.IsIndeterminate = false;
         }
         //end indicator move image
@@ -1279,6 +1288,7 @@ namespace albom_proto_2
                 progress.IsIndeterminate = false;
                 progress.Value = 0;
                 progress.Visibility = Visibility.Visible;
+                PhotosListBox.IsEnabled = false;
 
                 SetBar(kol_image);
 
