@@ -189,19 +189,17 @@ namespace albom_proto_2
                 if (Secret.rez == Class1.nothing_metadata[current_languare_index])
                     goto no_met;
 
-                    string output1 = root1[0]+":"+Secret.rez+Class1.sel_dir+root2[root2.Length-1];
+                string output1 = root1[0]+":"+Secret.rez+Class1.sel_dir+root2[root2.Length-1];
                 output1= output1.Replace('\\', '/');
 
 
                 double K = Convert.ToDouble(i) / PhotosListBox.Items.Count  * Class1.progress_max;
                 bm.ReportProgress((int)K, i);
 
-                //File.Move(root1, output1);
-
                 using (var inputFs = new FileStream(root1, FileMode.Open, FileAccess.Read))
                 using (var outputFs = new FileStream(output1, FileMode.Create, FileAccess.Write))
                 {
-                    for (long nn = 0; nn <= inputFs.Length; nn++)
+                    for (long nn=0; nn< inputFs.Length;nn++)
                     {
                         byte b = (byte)inputFs.ReadByte();
                         outputFs.WriteByte(b);
@@ -213,6 +211,8 @@ namespace albom_proto_2
 
                 no_met:;
             }
+
+
         }
 
         void bm_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -1284,11 +1284,10 @@ namespace albom_proto_2
             //dir
             if (System.Windows.MessageBox.Show(Class1.move_up().message[current_languare_index], Class1.move_up().title[current_languare_index] + " " + Class1.selecting_path.Split(':')[0] + ":\\" + Class1.albom + Class1.assembly(), MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
             {
-
+                
                 progress.IsIndeterminate = false;
                 progress.Value = 0;
                 progress.Visibility = Visibility.Visible;
-                PhotosListBox.IsEnabled = false;
 
                 SetBar(kol_image);
 
@@ -1305,6 +1304,7 @@ namespace albom_proto_2
                 Class1.sel_img[1] = PhotosListBox.SelectedIndex.ToString();
                 Class1.sel_img[0] = Name_file.Text;
 
+                PhotosListBox.IsEnabled = false;
                 bm.RunWorkerAsync(Tuple.Create(kol_image));
 
                 //move_image(true);
