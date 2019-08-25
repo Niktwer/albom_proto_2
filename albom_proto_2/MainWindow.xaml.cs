@@ -24,6 +24,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Page;
 using System.Windows.Threading;
 using System.ComponentModel;
 using System.Threading;
+using System.Windows.Interop;
 
 namespace albom_proto_2
 {
@@ -1068,8 +1069,12 @@ namespace albom_proto_2
             Change.IsEnabled = false;
             jpeg.IsEnabled = false;
             other.IsEnabled = false;
-           
+
             CommonOpenFileDialog dialog_new = new CommonOpenFileDialog();
+            //WindowInteropHelper wih = new WindowInteropHelper(dialog_new);
+            //wih.Owner = this;
+            //myDialog.ShowDialog();
+
             dialog_new.Title = Class1.other_message().sel_folder_jpg[MainWindow.current_languare_index];
             if (Properties.Settings.Default.TimesRun == 0)
             {
@@ -1088,7 +1093,38 @@ namespace albom_proto_2
             dialog_new.Multiselect = false;
             dialog_new.AllowNonFileSystemItems = false;
 
-            if (dialog_new.ShowDialog() == CommonFileDialogResult.Ok)
+            //new
+            //create a Form for ownership (SAP-Window won't work)
+
+            Form g = new Form();
+            WindowInteropHelper wih = new WindowInteropHelper(g);
+
+            /*
+            WindowInteropHelper wih = new WindowInteropHelper(myDialog);
+            wih.Owner = ownerHwnd;
+            myDialog.ShowDialog();
+            */
+
+            g.Width = 200;
+
+            g.Height = 200;
+
+            g.Activate();
+
+            g.BringToFront();
+
+            g.Visible = true;
+
+            g.TopMost = true;
+
+            g.Focus();
+
+            CommonFileDialogResult objResult = dialog_new.ShowDialog(wih.Handle);
+
+            Thread.Sleep(100);
+            //end
+            //dialog_new.ShowDialog()==CommonFileDialogResult.Ok
+            if (objResult == CommonFileDialogResult.Ok)
             {
                 Oval.IsEnabled = false;
                 Count_image.Value = 0;
