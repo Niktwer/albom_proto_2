@@ -39,9 +39,10 @@ namespace albom_proto_2
         private const int WS_MAXIMIZEBOX = 0x10000; //maximize button
         private const int WS_MINIMIZEBOX = 0x20000; //minimize button
 
-        private const string ext= ".m2v";
-        private const string file_instruct = "Instruction.webm";
-        private const string instruc = "albom_proto_2.video.Instruction.webm";
+        private const string ext= ".wmv";
+        //".m2v"
+        private const string file_instruct = "instruction.wmv";
+        private const string instruc = "albom_proto_2.video.instruction.wmv";
 
         private string program;
         private string cur_dir = System.IO.Path.GetTempPath();

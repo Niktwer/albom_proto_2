@@ -353,7 +353,7 @@ namespace albom_proto_2
             pvWindow.SelectedPhoto = (Photo)PhotosListBox.SelectedItem;
 
             pvWindow.WindowState = WindowState.Maximized;
-            pvWindow.Show();
+            pvWindow.ShowDialog();
         }
 
         private void OnPhotoClickMove(object sender, RoutedEventArgs e)
@@ -1069,8 +1069,9 @@ namespace albom_proto_2
             Change.IsEnabled = false;
             jpeg.IsEnabled = false;
             other.IsEnabled = false;
-
             CommonOpenFileDialog dialog_new = new CommonOpenFileDialog();
+            
+            //CommonOpenFileDialog dialog_new = new CommonOpenFileDialog();
             //WindowInteropHelper wih = new WindowInteropHelper(dialog_new);
             //wih.Owner = this;
             //myDialog.ShowDialog();
@@ -1096,8 +1097,10 @@ namespace albom_proto_2
             //new
             //create a Form for ownership (SAP-Window won't work)
 
-            Form g = new Form();
-            WindowInteropHelper wih = new WindowInteropHelper(g);
+            //dialog_Window g = new dialog_Window();
+            //PhotoView g = new PhotoView();
+            //Form g = new Form();
+            //WindowInteropHelper wih = new WindowInteropHelper(g);
 
             /*
             WindowInteropHelper wih = new WindowInteropHelper(myDialog);
@@ -1105,26 +1108,26 @@ namespace albom_proto_2
             myDialog.ShowDialog();
             */
 
-            g.Width = 200;
+            //g.Width = 200;
 
-            g.Height = 200;
+            //g.Height = 200;
 
-            g.Activate();
+            //g.Activate();
 
-            g.BringToFront();
+            //g.BringToFront();
 
-            g.Visible = true;
+            //g.Visible = true;
 
-            g.TopMost = true;
+            //g.TopMost = true;
 
-            g.Focus();
+            //g.Focus();
 
-            CommonFileDialogResult objResult = dialog_new.ShowDialog(wih.Handle);
+            //CommonFileDialogResult objResult = dialog_new.ShowDialog(wih.Handle);
 
-            Thread.Sleep(100);
+            //Thread.Sleep(100);
             //end
             //dialog_new.ShowDialog()==CommonFileDialogResult.Ok
-            if (objResult == CommonFileDialogResult.Ok)
+            if (dialog_new.ShowDialog(this) == CommonFileDialogResult.Ok)
             {
                 Oval.IsEnabled = false;
                 Count_image.Value = 0;
