@@ -39,10 +39,13 @@ namespace albom_proto_2
         private const int WS_MAXIMIZEBOX = 0x10000; //maximize button
         private const int WS_MINIMIZEBOX = 0x20000; //minimize button
 
-        private const string ext= ".wmv";
-        //".m2v"
-        private const string file_instruct = "instruction.wmv";
-        private const string instruc = "albom_proto_2.video.instruction.wmv";
+
+        private static string[] instruc =  Class1.video_instr.Split('.');
+
+        private static string ext = "."+instruc[instruc.Length-1] ;
+        //".mp4"
+        private string file_instruct = instruc[instruc.Length - 2] + ext;
+        
 
         private string program;
         private string cur_dir = System.IO.Path.GetTempPath();
@@ -218,7 +221,7 @@ namespace albom_proto_2
             }
 
 
-            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(instruc))
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(Class1.video_instr))
             {
                 int f = (int)stream.Length;
                 using (FileStream fileStream = new FileStream(cur_dir + file_instruct, FileMode.CreateNew))

@@ -22,7 +22,7 @@ namespace albom_proto_2
     /// </summary>
     public partial class Instruction : Window
     {
-            const string instr = "albom_proto_2.video.instruction.webm";
+            const string instr = Class1.video_instr;
             string cur_dir = Environment.CurrentDirectory + "\\"; 
             //System.IO.Path.GetTempPath();
 

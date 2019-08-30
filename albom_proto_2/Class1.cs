@@ -76,6 +76,7 @@ namespace albom_proto_2
         public const string sel_dir = "\\";
         public static int progress_max;
 
+        public const string video_instr = "albom_proto_2.video.Instruction.mp4";
 
         public struct Name_flag_languare
         {

@@ -8,30 +8,66 @@
         Title="{DynamicResource Info}"  Height="700" Width="{StaticResource titlt_widht}" Background="White" Icon="Resources/information.png" MinWidth="4" WindowStartupLocation="Manual" ShowInTaskbar="False" Topmost="False" Closing="Window_Closing" Closed="Window_Closed" ResizeMode="NoResize">
 
     <Window.Resources>
-        <Style x:Key="RoundButtonTemplate" TargetType="Button">
-            <Setter Property="ContentTemplate">
-                <Setter.Value>
-                    <DataTemplate>
-                        <TextBlock TextDecorations="Underline" Text="{TemplateBinding Content}"/>
-                    </DataTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Content" Value="{DynamicResource instruction}"/>
-            <Setter Property="Background" Value="LightCyan"/>
-            <Setter Property="Foreground" Value="Black" />
+
+        <!-- For button style -->
+        <Style x:Key="DialogButtonStyle" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="15" Background="{TemplateBinding Background}"
-                                BorderThickness="1">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle x:Name="GelBackground" Opacity="1" RadiusX="48.514" RadiusY="48.514"
+                                   Fill="{TemplateBinding Background}" StrokeThickness="0.35">
+                                <Rectangle.Stroke>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#FF6495ED" Offset="0" />
+                                        <GradientStop Color="#FF6495ED" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Rectangle.Stroke>
+                            </Rectangle>
+                            <!--<Rectangle x:Name="GelShine" Margin="2,2,2,0" VerticalAlignment="Top" RadiusX="6" RadiusY="6"
+                                   Opacity="1" Stroke="Transparent" Height="15px">
+                                -->
+                            <!--<Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#FF6495ED" Offset="0"/>
+                                        <GradientStop Color="Transparent" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>-->
+                            <!--
+                            </Rectangle>-->
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Brown">
 
-                            </ContentPresenter>
-                        </Border>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="GelBackground">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="Yellow" Offset="0"/>
+                                            <GradientStop Color="Cyan" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Fill" TargetName="GelBackground" Value="LightGray">
+
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <Setter Property="Background" Value="#30D5C8"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Height" Value="60"/>
         </Style>
+
     </Window.Resources>
 
     <Grid Background="Cyan" Margin="0,0,0,-2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="674" >
@@ -56,7 +92,12 @@
         <!--<RadioButton Name="user" Content="Default"  HorizontalAlignment="Right" Margin="0,576,160,0" VerticalAlignment="Top" IsChecked="True" Grid.Column="3" FontSize="10" Width="90" Height="16" Grid.ColumnSpan="3" Grid.Row="1" Checked="user_Checked"/>-->
         <!--<TextBox Name="arbitrary_textbox" HorizontalAlignment="Left" Height="20" Margin="40,572,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Background="White" Grid.Column="5" FontSize="10" Grid.Row="1" MouseDown="arbitrary_textbox_MouseDown"/>-->
         <!--<TextBox Name="arbitr" HorizontalAlignment="Left" Height="20" Margin="40,572,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.Column="5" FontSize="10" Grid.Row="1" MouseUp="arbitr_MouseUp" TextChanged="arbitr_TextChanged" />-->
-        <Button Grid.ColumnSpan="2" Height="31" Margin="0,620,0,0" Grid.Column="4" Grid.Row="1" Click="Button_Click"  Style="{StaticResource RoundButtonTemplate}" Width="250" VerticalAlignment="Top" HorizontalAlignment="Center" />
+        <Button Height="45" Margin="205,620,195,0" Click="Button_Click"   Width="45" VerticalAlignment="Top" HorizontalAlignment="Center" Style="{DynamicResource DialogButtonStyle}"  ToolTip="{DynamicResource instruction}" >
+            <StackPanel>
+                <Image Source="Resources/crop.png" />
+            </StackPanel>
+        </Button>
+
     </Grid>
 </Window>
 
